@@ -34,7 +34,7 @@ there are three example json files in the request-examples package:
 to check the output for this input run the command: 
 curl.exe -X POST http://localhost:8080/api/v1/van-opt/optimize `
 -H "Content-Type: application/json" `
---data-binary "@C:\Users\USER\OneDrive\Desktop\spring-core-task\VanOpt\src\main\java\org\example\vanopt\request-examples\valid-request.json" |
+--data-binary "@src/main/java/org/example/vanopt/request-examples/valid-request.json" |
 ConvertFrom-Json | ConvertTo-Json -Depth 10
 
 2. invalid-request
@@ -42,15 +42,14 @@ ConvertFrom-Json | ConvertTo-Json -Depth 10
 to check the output for this input run the command: 
 curl.exe -X POST http://localhost:8080/api/v1/van-opt/optimize `
 -H "Content-Type: application/json" `
---data-binary "@src\main\java\org\example\vanopt\request-examples\invalid-request.json" | 
+--data-binary "@src/main/java/org/example/vanopt/request-examples/invalid-request.json" |
 ConvertFrom-Json | ConvertTo-Json -Depth 10
 
 3. empty-request
 
-to check the output for this input run the command: 
 curl.exe -X POST http://localhost:8080/api/v1/van-opt/optimize `
 -H "Content-Type: application/json" `
---data-binary "@src\main\java\org\example\vanopt\request-examples\empty-request.json" | 
+--data-binary "@src/main/java/org/example/vanopt/request-examples/empty-request.json" |
 ConvertFrom-Json | ConvertTo-Json -Depth 10
 
 Database schema & indexes
