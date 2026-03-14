@@ -36,6 +36,7 @@ curl.exe -X POST http://localhost:8080/api/v1/van-opt/optimize `
 -H "Content-Type: application/json" `
 --data-binary "@C:\Users\USER\OneDrive\Desktop\spring-core-task\VanOpt\src\main\java\org\example\vanopt\request-examples\valid-request.json" |
 ConvertFrom-Json | ConvertTo-Json -Depth 10
+
 2. invalid-request
 
 to check the output for this input run the command: 
@@ -43,6 +44,7 @@ curl.exe -X POST http://localhost:8080/api/v1/van-opt/optimize `
 -H "Content-Type: application/json" `
 --data-binary "@src\main\java\org\example\vanopt\request-examples\invalid-request.json" | 
 ConvertFrom-Json | ConvertTo-Json -Depth 10
+
 3. empty-request
 
 to check the output for this input run the command: 
@@ -53,6 +55,7 @@ ConvertFrom-Json | ConvertTo-Json -Depth 10
 
 Database schema & indexes
 we have two tables in the database:
+
 1. 	optimization_request
 	columns:
 		id 				CHAR(36) primary key;
@@ -60,6 +63,7 @@ we have two tables in the database:
 		total_volume	INT
 		total_revenue 	INT
 		created_at		TIMESTAMP
+
 2. 	shipment:
 	columns:
 		id				BIGINT primary key
@@ -68,7 +72,7 @@ we have two tables in the database:
 		volume			INT
 		revenue			INT
 		selected		BOOLEAN
-		
+
 indexing: idx_shipment_request_id
 		
 		
