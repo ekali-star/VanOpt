@@ -1,0 +1,7 @@
+{
+  "maxVolume": 4,
+  "availableShipments": [
+    {"name": "Parcel A", "volume": 5, "revenue": 120},
+    {"name": "Parcel B", "volume": 10, "revenue": 200}
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "maxVolume": 15,
+  "availableShipments":
+  [
+
+    {
+      "name": "Parcel A"
+    ,
+      "volume": 5,
+      "revenue": 120
+    },
+
+    {
+      "name": "Parcel B"
+    ,
+      "volume": 10,
+      "revenue": 200
+    },
+
+    {
+      "name": "Parcel C"
+    ,
+      "volume": 3,
+      "revenue": 80
+    },
+
+    {
+      "name": "Parcel D"
+    ,
+      "volume": 8,
+      "revenue": 160
+
+    }
+
+  ]
+}
