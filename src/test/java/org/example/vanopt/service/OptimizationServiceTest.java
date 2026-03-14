@@ -33,7 +33,6 @@ class OptimizationServiceTest {
 
     @Test
     void testOptimize_basicScenario() {
-        // Given
         List<ShipmentDTO> shipments = Arrays.asList(
                 new ShipmentDTO("A", 5, 10),
                 new ShipmentDTO("B", 4, 40),

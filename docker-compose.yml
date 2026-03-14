@@ -1,4 +1,5 @@
 version: '3.9'
+
 services:
   db:
     image: mysql:8.0
@@ -7,8 +8,8 @@ services:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: vanopt
-      MYSQL_USER: vanoptuser
-      MYSQL_PASSWORD: secret
+      MYSQL_USER: vanopt_user
+      MYSQL_PASSWORD: password123
       MYSQL_ROOT_PASSWORD: rootpassword
     volumes:
       - vanopt-data:/var/lib/mysql
