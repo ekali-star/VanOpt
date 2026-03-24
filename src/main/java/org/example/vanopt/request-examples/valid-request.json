@@ -1,36 +1,25 @@
 {
   "maxVolume": 15,
-  "availableShipments":
-  [
-
+  "availableShipments": [
     {
-      "name": "Parcel A"
-    ,
+      "name": "Parcel A",
       "volume": 5,
       "revenue": 120
     },
-
     {
-      "name": "Parcel B"
-    ,
+      "name": "Parcel B",
       "volume": 10,
       "revenue": 200
     },
-
     {
-      "name": "Parcel C"
-    ,
+      "name": "Parcel C",
       "volume": 3,
       "revenue": 80
     },
-
     {
-      "name": "Parcel D"
-    ,
+      "name": "Parcel D",
       "volume": 8,
       "revenue": 160
-
     }
-
   ]
 }

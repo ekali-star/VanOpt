@@ -75,6 +75,31 @@ public class OptimizationService {
         }
         responseDTO.setSelectedShipments(responseShipments);
 
+        List<Shipment> unusedShipments = shipmentRepository.findAll().stream()
+                .filter(s -> !s.isSelected())
+                .collect(Collectors.toList());
+
+        int v = requestDTO.getMaxVolume() - totalVolume;
+
+
+        List<ShipmentDTO> additionalShipments = KnapsackSolver.solve(v, unusedShipments.stream()
+                .map(s -> new ShipmentDTO(s.getName(), s.getVolume(), s.getRevenue()))
+                .collect(Collectors.toList()));
+
+        int additionalVolume = additionalShipments.stream().mapToInt(ShipmentDTO::getVolume).sum();
+        int additionalRevenue = additionalShipments.stream().mapToInt(ShipmentDTO::getRevenue).sum();
+
+        List<Shipment> additionalShipmentsEntities = unusedShipments.stream()
+                .filter(s -> additionalShipments.contains(new ShipmentDTO(s.getName(), s.getVolume(), s.getRevenue())))
+                .collect(Collectors.toList());
+
+        for(Shipment s : additionalShipmentsEntities){
+            s.setSelected(true);
+        }
+
+        responseDTO.getSelectedShipments().addAll(additionalShipments);
+        responseDTO.setTotalVolume(totalVolume+additionalVolume);
+        responseDTO.setTotalRevenue(totalRevenue+additionalRevenue);
         return responseDTO;
     }
     public OptimizationResponseDTO buildResponseFromEntity(OptimizationRequest request) {
